@@ -1,27 +1,24 @@
 {
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.9"
+  "name": "webview",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "start": "node src/index.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciellyDiasM/WebView.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranciellyDiasM/WebView/issues"
+  },
+  "homepage": "https://github.com/FranciellyDiasM/WebView#readme",
+  "description": "",
   "dependencies": {
     "express": "^5.1.0"
   }
 }
 
-{
-  "name": "projeto",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-  "test": "jest"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-  "jest": "^29.7.0",
-  "nodemon": "^3.1.9",
-  "supertest": "^7.0.0"
-  }
-  }
