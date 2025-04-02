@@ -8,8 +8,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Rota para exibir a página principal
 app.get('/', (req, res) => {
+    console.log("Caminho absoluto do arquivo:", path.join(__dirname, '../public/startbootstrap-sb-admin-2-gh-pages/index.html'));
+
     res.sendFile(path.join(__dirname, '../public/startbootstrap-sb-admin-2-gh-pages/index.html'));
 });
+
 
 // Iniciar o servidor
 app.listen(port, () => {
