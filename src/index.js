@@ -1,20 +1,38 @@
 const express = require('express');
 const path = require('path');
+
 const app = express();
 const port = 3000;
 
-// Servir arquivos estáticos da pasta "public"
-app.use(express.static(path.join(__dirname, '../public')));
 
-// Rota para exibir a página principal
+app.use(express.static(path.join(__dirname, '../public/startbootstrap-sb-admin-2-gh-pages')));
+
+// Rotas
 app.get('/', (req, res) => {
-    console.log("Caminho absoluto do arquivo:", path.join(__dirname, '../public/startbootstrap-sb-admin-2-gh-pages/index.html'));
-
-    res.sendFile(path.join(__dirname, '../public/startbootstrap-sb-admin-2-gh-pages/index.html'));
+  res.sendFile(path.join(__dirname, '/views', 'login.html'));
 });
 
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views', 'index.html'));
+  });
+  
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views', 'register.html'));
+  });
 
-// Iniciar o servidor
-app.listen(port, () => {
+  app.get('/forgot-password', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views', 'forgot-password.html'));
+  });
+
+  app.use((req, res, next) => {
+    if (req.path.endsWith('.html')) {
+      const newPath = req.path.replace('.html', '');
+      res.redirect(301, newPath); // Redireciona para a rota sem .html
+    } else {
+      next();
+    }
+  });
+
+app.listen(port, ()=> {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
