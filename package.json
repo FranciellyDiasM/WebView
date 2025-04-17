@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "start": "node src/index.js"
-},
+    "start": "node src/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FranciellyDiasM/WebView.git"
@@ -19,6 +19,8 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }
-
